@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class ContadorDeA {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite uma string para verificar a ocorrência da letra 'a': ");
+        String texto = scanner.nextLine();
+
+        verificarLetraA(texto);
+        
+        scanner.close();
+    }
+
+    public static void verificarLetraA(String texto) {
+        int contador = 0;
+
+        char[] caracteres = texto.toCharArray();
+
+        for (char c : caracteres) {
+            if (c == 'a' || c == 'A') {
+                contador++;
+            }
+        }
+
+        if (contador > 0) {
+            System.out.println("A letra 'a' foi encontrada " + contador + " vez(es) na string.");
+        } else {
+            System.out.println("A letra 'a' não foi encontrada na string.");
+        }
+    }
+}
